@@ -8,13 +8,12 @@ import postRoutes from './routes/posts.js';
 //initialize the app
 const app = express();
 
-//middleware to connect to our application
-app.use('/posts',postRoutes);
-
 app.use(bodyParser.json({limit:"30mb", extended: "true"}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended: "true"}));
 app.use(cors());
 
+//middleware to connect to our application
+app.use('/posts',postRoutes);
 
 //connection with database
 
